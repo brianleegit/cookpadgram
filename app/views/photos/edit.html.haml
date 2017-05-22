@@ -1,0 +1,10 @@
+.container.white-box#upload-form
+  .text-center
+    %h1.display-4 Edit photo
+  .text-center
+    = image_tag @photo.img.url(:medium)
+  =render 'partial/form'
+.row.justify-content-center
+  .text-center.edit-links
+    = link_to "Delete Photo", photo_path(@photo), method: :delete, data: { confirm: "Are you sure you want to delete this photo?" }, class:'btn btn-primary'      
+    = link_to "cancel", photos_path, class:'btn btn-primary'

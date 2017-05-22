@@ -1,0 +1,55 @@
+//for bootstrap css framework
+@import "bootstrap";
+body {
+  background-color: #f2f2f2;
+  font-family: proxima-nova, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+}
+.white-box{
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.0975);
+  margin-bottom: 20px;
+}
+.username{
+  font-weight: 600;
+  color: #003569;
+}
+.user{
+  height: 64px;
+  padding: 14px 20px;
+}
+#main{
+  padding-top: 40px;
+}
+@media (min-width: 736px){
+  .caption {
+      padding: 10px 15px;
+  }
+}
+#upload-form{
+  padding: 20px;
+}
+.comment-wrap{
+  margin-bottom: 7px;
+  position: relative;
+  word-wrap: break-word;
+}
+.comment-form{
+  color: #999;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+@media (min-width: 736px){
+  .comment-form input{
+      font-size: 15px;
+      line-height: 18px;
+  }
+}
+.comment-form input {
+    background: 0 0;
+    border: none;
+    color: #262626;
+    outline: none;
+    width: 100%;
+}

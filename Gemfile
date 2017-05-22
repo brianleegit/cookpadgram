@@ -34,6 +34,14 @@ gem 'jbuilder', '~> 2.5'
 gem 'haml', "5.0.1"
 gem "haml-rails"
 gem "paperclip", "~> 5.0.0"
+gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'simple_form'
+gem 'jquery'
+gem 'jquery-rails'
+gem 'devise'
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

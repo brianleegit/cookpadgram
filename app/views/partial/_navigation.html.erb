@@ -1,0 +1,30 @@
+<nav class="navbar  navbar-toggleable-md navbar-light bg-faded navbar-right white-box" >
+    <div class="container">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <%= link_to root_path, class: "navbar-brand"  do %>
+      <%= image_tag "logo.png", width: "30", height:"30", class: "d-inline-block align-top" %>
+      Cookpadgram
+    <% end %>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <%if user_signed_in? %>
+            <li class="nav-item <%= active_class(new_photo_path) %>">
+              <%= link_to "New Photo", new_photo_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item <%= active_class(destroy_user_session_path) %>">
+              <%= link_to "Logout", destroy_user_session_path, class: "nav-link", method: :delete %>
+            </li>
+         <% else %>
+            <li class="nav-item <%= active_class(new_user_session_path) %>">
+              <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            </li>
+            <li class="nav-item <%= active_class(new_user_registration_path) %>">
+              <%= link_to "Sign up", new_user_registration_path, class: "nav-link" %>
+            </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>

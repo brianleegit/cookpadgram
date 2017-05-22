@@ -1,0 +1,29 @@
+.row.justify-content-center
+  .col-5.col-md-5.col-sm-11.rounded.white-box
+    .row.user
+      .header.username
+        = p.user.user_name
+      %p.ml-auto.header
+        = time_ago_in_words(p.created_at) + " ago"
+    .row.justify-content-center
+      =link_to photo_path(p), class:'.col-12' do
+        =image_tag p.img.url(:medium), class:'img-fluid'
+    .row.caption
+      %p.caption.col.align-self-start
+        =p.user.user_name
+        =p.caption
+
+    .container.caption
+      - if p.comments
+        - p.comments.each do |comment|
+          .comment-wrap
+            .username
+              = comment.user.user_name
+            .comment-content
+              = comment.content
+            - if comment.user == current_user
+              = link_to photo_comment_path(p, comment),method: :delete, data: { confirm: "Are you sure?" } do
+                %span(class="glyphicon glyphicon-remove delete-comment")
+      .comment-form.row
+        = form_for [p, p.comments.new] do |f|
+          = f.text_field :content, placeholder: 'Add a comment...'
